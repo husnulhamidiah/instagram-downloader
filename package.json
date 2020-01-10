@@ -1,6 +1,6 @@
 {
-  "name": "svelte-app",
-  "version": "1.0.0",
+  "name": "instagram-downloader",
+  "version": "0.0.1",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -16,6 +16,10 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "instagram-stories": "^1.0.1",
     "sirv-cli": "^0.4.4"
-  }
+  },
+  "description": "*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*",
+  "author": "Husnul Anwari <husnulhamidiah@gmail.com>",
+  "license": "MIT"
 }
