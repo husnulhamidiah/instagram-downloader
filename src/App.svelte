@@ -7,13 +7,20 @@
 	let url, media
 
 	const getMedia = async () => {
-		const code = url
+    const code = extractUrl(url)
 		const { graphql : { shortcode_media } } = await getMediaByCode(code)
 		const nodes = await extractMedia(shortcode_media)
 
 		media = Array.isArray(nodes) ? nodes : [ nodes ]
 		url = ''
-	}
+  }
+
+  const extractUrl = (url) => {
+    const regex = /p\/([a-z0-9]+)/gi
+    const match = url.match(regex)
+
+    return (match) ? match.shift().substring(2) : url
+  }
 
 	const extractMedia = async (json) => {
     switch (json.__typename) {
