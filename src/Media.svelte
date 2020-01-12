@@ -11,8 +11,8 @@
 </script>
 
 <style>
-  .no-padding {
-    padding: 0;
+  .media {
+    border: 10px solid #fad284;
   }
   .image-media {
     width: 250px;
@@ -28,7 +28,7 @@
 <div class="row">
   {#each media as medium, i}
     {#if medium && medium.src && medium.typename}
-      <div class="col no-padding">
+      <div class="col padding-none">
         <div popover-bottom="Download" on:click={ onClickHandler } data-source={ medium.src }>
           {#if medium.typename == 'GraphImage'}
             <img src={ medium.src } alt="media" class="media image-media">

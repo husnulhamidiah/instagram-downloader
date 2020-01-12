@@ -5,18 +5,26 @@
 	import { getMediaByCode } from 'instagram-stories'
 
 	let url, media
+  let mediaExist = true
 
 	const getMedia = async () => {
-    const code = extractUrl(url)
-		const { graphql : { shortcode_media } } = await getMediaByCode(code)
-		const nodes = await extractMedia(shortcode_media)
+    try {
+      const code = extractUrl(url)
+      const { graphql : { shortcode_media } } = await getMediaByCode(code)
+      const nodes = await extractMedia(shortcode_media)
 
-		media = Array.isArray(nodes) ? nodes : [ nodes ]
-		url = ''
+      media = Array.isArray(nodes) ? nodes : [ nodes ]
+      url = ''
+      mediaExist = true
+    } catch (error) {
+      media = []
+      url = ''
+      mediaExist = false
+    }
   }
 
   const extractUrl = (url) => {
-    const regex = /p\/([a-z0-9]+)/gi
+    const regex = /p\/([_a-z0-9]+)/gi
     const match = url.match(regex)
 
     return (match) ? match.shift().substring(2) : url
@@ -52,10 +60,22 @@
   }
 </script>
 
+<style>
+  .badge.hero {
+    background-color: #fad284;
+  }
+</style>
+
 <main class="container">
-	<blockquote>
-		<p><em>v0.0.1-alpha</em></p>
-	</blockquote>
+  <div>
+    <h3 class="padding-left"><span class="badge hero">avocadobar</span></h3>
+  </div>
+
+  {#if !mediaExist}
+    <div class="row flex-spaces">
+      <div class="alert alert-danger">Media not found</div>
+    </div>
+  {/if}
 	
   <Form bind:url={ url } on:click={ getMedia }></Form>
 	<Media media={ media }></Media>
