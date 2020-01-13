@@ -61,22 +61,36 @@
 </script>
 
 <style>
-  .badge.hero {
-    background-color: #fad284;
+  .header {
+    margin-top: 5rem;
+    max-width: 50%;
+  }
+  .footer {
+    margin: 5rem auto;
+  }
+  .alert.danger {
+    border-left: 0.3rem solid #e97979;
   }
 </style>
 
-<main class="container">
-  <div>
-    <h3 class="padding-left"><span class="badge hero">avocadobar</span></h3>
-  </div>
+<div class="container">
+  <header class="header">
+    <h1>Yet! Another instagram downloader.</h1>
+  </header>
 
-  {#if !mediaExist}
-    <div class="row flex-spaces">
-      <div class="alert alert-danger">Media not found</div>
-    </div>
-  {/if}
-	
-  <Form bind:url={ url } on:click={ getMedia }></Form>
-	<Media media={ media }></Media>
-</main>
+  <main>
+    {#if !mediaExist}
+      <blockquote class="alert danger">
+        <p><em>Media not found.</em></p>
+      </blockquote>
+    {/if}
+    
+    <Form bind:url={ url } on:click={ getMedia }></Form>
+    <Media media={ media }></Media>
+  </main>
+
+  <footer class="footer">
+    Made with ❤ by Husnul Anwari <br>
+    <a href="https://github.com/husnulhamidiah/instagram-downloader">Github</a>
+  </footer>
+</div>
