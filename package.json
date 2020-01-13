@@ -1,6 +1,6 @@
 {
-  "name": "instagram-downloader",
-  "version": "0.0.1",
+  "name": "yet",
+  "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -21,5 +21,18 @@
   },
   "description": "*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*",
   "author": "Husnul Anwari <husnulhamidiah@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/husnulhamidiah/yet.git"
+  },
+  "keywords": [
+    "yet",
+    "instagram",
+    "downloader"
+  ],
+  "bugs": {
+    "url": "https://github.com/husnulhamidiah/yet/issues"
+  },
+  "homepage": "https://github.com/husnulhamidiah/yet#readme"
 }
