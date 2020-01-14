@@ -19,6 +19,7 @@
 <style>
   .media {
     margin: 3rem 0;
+    max-width: fit-content;
   }
   .media-video {
     max-width: 100%;
