@@ -1,4 +1,4 @@
-<img width="1053" alt="Screen Shot 2020-01-13 at 23 27 53" src="https://user-images.githubusercontent.com/7609801/72273113-5f2e9180-365c-11ea-9a2c-3812214da9da.png">
+<img width="832" alt="Screen Shot 2020-01-16 at 00 49 39" src="https://user-images.githubusercontent.com/7609801/72457878-1ca2bb80-37fa-11ea-8d3b-28805b161fbc.png">
 
 # Yet!
 
@@ -6,10 +6,9 @@ Another instagram downloader build with Svelte.
 
 ### Installation
 
-Require `git 2.23.0` or above 
-
 ```
-$ git clone --recurse-submodules --remote-submodules https://github.com/husnulhamidiah/yet.git
+$ git clone https://github.com/husnulhamidiah/yet.git
+$ cd yet
 $ npm install
 $ npm run dev
 ```
@@ -18,10 +17,7 @@ $ npm run dev
 
 ```
 $ npm run build
-$ cd public
-$ git add .
-$ git commit -m "Update Yet!"
-$ git push origin gh-pages
+$ git subtree push --prefix public origin gh-pages
 ```
 
 ### Contributing
