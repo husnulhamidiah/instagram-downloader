@@ -1,0 +1,28 @@
+{
+  "short_name": "Yet!",
+  "name": "Yet!",
+  "description": "Yet! Another Instagram Downloader",
+  "scope": "/yet/",
+  "start_url": "/yet/",
+  "icons": [
+    {
+      "src": "yet-icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "yet-icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "share_target": {
+    "action": "/yet/",
+    "params": {
+      "text": "text"
+    }
+  }
+}
