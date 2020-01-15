@@ -3,6 +3,9 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
+import css from 'rollup-plugin-css-porter';
+import replace from '@rollup/plugin-replace';
+import purgecss from 'rollup-plugin-purgecss';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -35,6 +38,17 @@ export default {
 			dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
 		}),
 		commonjs(),
+		replace({ '9b4dca': 'ff5656' }),
+		css({
+			dest: 'public/build/global.css',
+			raw: false,
+			minified: true
+		}),
+		purgecss({
+			content: ["./src/**/*.svelte", "./public/**/*.html"],
+			css: ["./public/**/*.css"],
+			defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
+		}),
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated

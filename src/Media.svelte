@@ -21,8 +21,51 @@
     margin: 3rem 0;
     max-width: fit-content;
   }
+  
   .media-video {
     max-width: 100%;
+  }
+
+  [popover-bottom] {
+    margin: 24px;
+    position: relative
+  }
+
+  [popover-bottom]:hover::after {
+    opacity: 1;
+    transition: opacity .2s ease-out
+  }
+
+  [popover-bottom]::after {
+    transition: opacity 235ms ease-in-out 0s;
+    background: rgba(0, 0, 0, .7);
+    border: 2px solid #41403e;
+    color: #fff;
+    font-size: .8em;
+    left: 50%;
+    min-width: 10rem;
+    opacity: 0;
+    padding: .3em 2em;
+    position: absolute;
+    text-align: center;
+    top: -6px;
+    -webkit-transform: translateX(-50%) translateY(-100%);
+    transform: translateX(-50%) translateY(-100%)
+  }
+
+  [popover-bottom]::before {
+    margin-top: 8px;
+    top: 100%;
+    -webkit-transform: translateX(-50%) translatey(-100%) rotate(-180deg);
+    transform: translateX(-50%) translatey(-100%) rotate(-180deg)
+  }
+
+  [popover-bottom]::after {
+    content: attr(popover-bottom);
+    margin-top: 8px;
+    top: 100%;
+    -webkit-transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0)
   }
 </style>
 

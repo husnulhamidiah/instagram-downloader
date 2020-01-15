@@ -1,4 +1,6 @@
 <script>
+  import '../node_modules/normalize.css/normalize.css'
+  import '../node_modules/milligram/dist/milligram.css'
 	import Form from './Form.svelte'
 	import Media from './Media.svelte'
 
@@ -58,6 +60,11 @@
         break
     }
   }
+
+  window.addEventListener('share', (e) => {
+    url = e.detail
+    getMedia()
+  }, false);
 </script>
 
 <style>
