@@ -27,7 +27,6 @@
   }
 
   [popover-bottom] {
-    margin: 24px;
     position: relative
   }
 
@@ -39,13 +38,12 @@
   [popover-bottom]::after {
     transition: opacity 235ms ease-in-out 0s;
     background: rgba(0, 0, 0, .7);
-    border: 2px solid #41403e;
     color: #fff;
     font-size: .8em;
     left: 50%;
     min-width: 10rem;
     opacity: 0;
-    padding: .3em 2em;
+    padding: .4em 2em;
     position: absolute;
     text-align: center;
     top: -6px;
