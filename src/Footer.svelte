@@ -110,7 +110,7 @@
     <div class="bubble" style="--size:4.1187558075350585rem; --distance:9.83347156194614rem; --position:73.46582326698116%; --time:2.715186941605962s; --delay:-3.685436312488823s;"></div>
   </div>
   <div class="content">
-    Made with ❤ by Husnul Anwari
+    Made with ❤ by husnulhamidiah
     <a href="https://github.com/husnulhamidiah/instagram-downloader">Github</a>
     <!-- <div>
       <div><b>Eldew</b><a href="#">Secuce</a><a href="#">Drupand</a><a href="#">Oceash</a><a href="#">Ugefe</a><a href="#">Babed</a></div>

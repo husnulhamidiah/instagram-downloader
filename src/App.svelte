@@ -77,7 +77,6 @@
   .header {
     margin: 0;
     margin-top: 5rem;
-    max-width: 50%;
   }
   .main {
     flex: 1 0 auto;
@@ -88,9 +87,12 @@
 </style>
 
 <div class="app">
-  <header class="container header">
-    <h1>Yet! Another instagram downloader.</h1>
+  <header class="container">
+    <div class="header">
+      <h1>Yet! Another instagram downloader.</h1>
+    </div>
   </header>
+
   <main class="container main">
     {#if !mediaExist}
       <blockquote class="alert danger">
@@ -101,6 +103,7 @@
     <Form bind:url={ url } on:click={ getMedia }></Form>
     <Media media={ media }></Media>
   </main>
+  
   <footer>
     <Footer></Footer>
   </footer>
