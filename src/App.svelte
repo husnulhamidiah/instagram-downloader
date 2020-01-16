@@ -2,7 +2,8 @@
   import '../node_modules/normalize.css/normalize.css'
   import '../node_modules/milligram/dist/milligram.css'
 	import Form from './Form.svelte'
-	import Media from './Media.svelte'
+  import Media from './Media.svelte'
+  import Footer from './Footer.svelte'
 
 	import { getMediaByCode } from 'instagram-stories'
 
@@ -68,24 +69,29 @@
 </script>
 
 <style>
+  .app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
   .header {
+    margin: 0;
     margin-top: 5rem;
     max-width: 50%;
   }
-  .footer {
-    margin: 5rem auto;
+  .main {
+    flex: 1 0 auto;
   }
   .alert.danger {
     border-left: 0.3rem solid #e97979;
   }
 </style>
 
-<div class="container">
-  <header class="header">
+<div class="app">
+  <header class="container header">
     <h1>Yet! Another instagram downloader.</h1>
   </header>
-
-  <main>
+  <main class="container main">
     {#if !mediaExist}
       <blockquote class="alert danger">
         <p><em>Media not found.</em></p>
@@ -95,9 +101,7 @@
     <Form bind:url={ url } on:click={ getMedia }></Form>
     <Media media={ media }></Media>
   </main>
-
-  <footer class="footer">
-    Made with ❤ by Husnul Anwari <br>
-    <a href="https://github.com/husnulhamidiah/instagram-downloader">Github</a>
+  <footer>
+    <Footer></Footer>
   </footer>
 </div>

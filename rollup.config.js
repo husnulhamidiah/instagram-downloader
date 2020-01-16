@@ -38,7 +38,7 @@ export default {
 			dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
 		}),
 		commonjs(),
-		replace({ '9b4dca': 'ff5656' }),
+		replace({ '9b4dca': 'ED5565' }),
 		css({
 			dest: 'public/build/global.css',
 			raw: false,

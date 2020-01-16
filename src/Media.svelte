@@ -37,8 +37,9 @@
 
   [popover-bottom]::after {
     transition: opacity 235ms ease-in-out 0s;
-    background: rgba(0, 0, 0, .7);
-    color: #fff;
+    border-radius: .4rem;
+    border: 1px solid #ED5565;
+    color: #ED5565;
     font-size: .8em;
     left: 50%;
     min-width: 10rem;
