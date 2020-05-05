@@ -2,21 +2,14 @@
   export let url = ''
 </script>
 
-<style>
-  .input-large, .button-large {
-    height: 5rem;
-  }
-</style>
-
 <form>
-  <div class="row">
-    <div class="column">
-      <input class="input-large" type="text" placeholder="url" id="url" bind:value={ url }>
-      <p style="word-break: break-word;">
-        Put url <span class="hero-detail"><em>https://www.instagram.com/p/B7JqW9uA1mP/ </em></span>or just the code <span class="hero-detail"><em>B7JqW9uA1mP</em></span>
+  <div>
+    <div>
+      <input type="text" placeholder="URL" id="url" bind:value={ url }>
+      <input type="submit" value="Submit" on:click|preventDefault>
+      <p>
+        Put url <span><em>https://www.instagram.com/p/B_kyX9tgn4W/</em></span> or just the code <span><em>B_kyX9tgn4W</em></span>
       </p>
-      <input class="button-primary button-large" type="submit" value="Submit" on:click|preventDefault>
     </div>
-    <div class="column"></div>
   </div>
 </form>

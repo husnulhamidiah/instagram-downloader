@@ -26,7 +26,7 @@
   }
 
   const extractUrl = (url) => {
-    const regex = /p\/([_a-z0-9]+)/gi
+    const regex = /p\/([_a-z0-9-]+)/gi
     const match = url.match(regex)
 
     return (match) ? match.shift().substring(2) : url
@@ -68,27 +68,22 @@
 </script>
 
 <style>
-  .header {
-    margin-top: 5rem;
-    max-width: 50%;
-  }
-  .footer {
-    margin: 5rem auto;
-  }
-  .alert.danger {
-    border-left: 0.3rem solid #e97979;
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
   }
 </style>
 
 <div class="container">
-  <header class="header">
-    <h1>Yet! Another instagram downloader.</h1>
+  <header>
+    <h1>Yet!</h1>
+    <p>Another instagram downloader</p>
   </header>
 
   <main>
     {#if !mediaExist}
-      <blockquote class="alert danger">
-        <p><em>Media not found.</em></p>
+      <blockquote>
+        Media not found
       </blockquote>
     {/if}
     
@@ -96,8 +91,9 @@
     <Media media={ media }></Media>
   </main>
 
-  <footer class="footer">
-    Made with ❤ by Husnul Anwari <br>
-    <a href="https://github.com/husnulhamidiah/instagram-downloader">Github</a>
+  <footer>
+    <hr>
+    Made with ❤ by Husnul Anwari<br>
+    <a href="https://github.com/husnulhamidiah/yet" target="_blank">Github</a>
   </footer>
 </div>
