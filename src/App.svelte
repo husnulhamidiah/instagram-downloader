@@ -69,18 +69,35 @@
 
 <style>
   .container {
-    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 440px;
     margin: 0 auto;
   }
+  .header {
+    flex-shrink: 0;
+    padding: 20px;
+    padding-bottom: 10px;
+  }
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+  .footer {
+    flex-shrink: 0;
+    padding: 20px;
+  }
+
 </style>
 
 <div class="container">
-  <header>
+  <header class="header">
     <h1>Yet!</h1>
     <p>Another instagram downloader</p>
   </header>
-
-  <main>
+  
+  <div class="content">
     {#if !mediaExist}
       <blockquote>
         Media not found
@@ -89,9 +106,9 @@
     
     <Form bind:url={ url } on:click={ getMedia }></Form>
     <Media media={ media }></Media>
-  </main>
+  </div>
 
-  <footer>
+  <footer class="footer">
     <hr>
     Made with ❤ by Husnul Anwari<br>
     <a href="https://github.com/husnulhamidiah/yet" target="_blank">Github</a>
